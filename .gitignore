@@ -1,0 +1,21 @@
+# Python (на будущее)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Редакторы
+.idea/
+.vscode/
+
+# Переменные окружения
+.env
+*.log
+
+# Временные файлы
+.DS_Store
+Thumbs.db
+
+# Локальные базы данных
+*.sqlite3
+*.db
