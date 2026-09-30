@@ -1,0 +1,225 @@
+{
+  "season": "2026/27",
+  "lastUpdated": "29 сентября 2026",
+  "coach": "Ханс-Дитер Флик",
+  "goalkeepers": [
+    {
+      "number": 1, "name": "Joan Garcia", "nameRu": "Жоан Гарсия", "age": 25,
+      "nationality": "Испания", "height": 191, "weight": 84, "foot": "Правая",
+      "position": "Вратарь", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuXJ6QXl3HNEjgS6u6ckADl4BekyAMdTKv-w&s",
+      "bio": "Воспитанник «Эспаньола», перешёл в «Барселону» в 2023 году. В сезоне 2025/26 стал основным вратарём после травмы тер Штегена. Известен отличной игрой ногами и реакцией.",
+      "stats": { "matches": 45, "saves": 128, "cleanSheets": 21 }
+    },
+    {
+      "number": 13, "name": "Szczęsny", "nameRu": "Войцех Шченсны", "age": 36,
+      "nationality": "Польша", "height": 196, "weight": 90, "foot": "Правая",
+      "position": "Вратарь", "photo": "",
+      "bio": "Опытный польский вратарь, присоединился к «Барселоне» в 2024 году. Чемпион Италии с «Ювентусом», финалист Лиги Чемпионов.",
+      "stats": { "matches": 22, "saves": 61, "cleanSheets": 10 }
+    },
+    {
+      "number": 25, "name": "Livaković", "nameRu": "Доминик Ливакович", "age": 31,
+      "nationality": "Хорватия", "height": 188, "weight": 82, "foot": "Правая",
+      "position": "Вратарь", "photo": "",
+      "bio": "Хорватский голкипер, бронзовый призёр ЧМ-2022. Пришёл в «Барселону» летом 2026 года как усиление вратарской линии.",
+      "stats": { "matches": 8, "saves": 24, "cleanSheets": 4 }
+    }
+  ],
+  "defenders": [
+    {
+      "number": 2, "name": "João Cancelo", "nameRu": "Жоау Канселу", "age": 32,
+      "nationality": "Португалия", "height": 182, "weight": 74, "foot": "Правая",
+      "position": "Правый защитник", "photo": "",
+      "bio": "Универсальный крайний защитник, вернулся в «Барселону» на постоянной основе летом 2026 года. Отличается подключениями к атаке.",
+      "stats": { "matches": 34, "goals": 3, "assists": 7 }
+    },
+    {
+      "number": 3, "name": "Alejandro Balde", "nameRu": "Алекс Бальде", "age": 23,
+      "nationality": "Испания", "height": 175, "weight": 69, "foot": "Левая",
+      "position": "Левый защитник", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9tDfCTu77uqUNdU8Es6heDNzCRD5xtlLfHQ&s",
+      "bio": "Воспитанник Ла Масии. Один из лучших молодых левых защитников мира. Отличается невероятной скоростью и дриблингом.",
+      "stats": { "matches": 32, "goals": 1, "assists": 7 }
+    },
+    {
+      "number": 4, "name": "Brian Fariñas", "nameRu": "Бриан Фариньяс", "age": 20,
+      "nationality": "Испания", "height": 187, "weight": 78, "foot": "Правая",
+      "position": "Центральный защитник", "photo": "",
+      "bio": "Молодой центральный защитник, выпускник Ла Масии. Отличается хладнокровием и хорошим первым пасом.",
+      "stats": { "matches": 14, "goals": 1, "assists": 1 }
+    },
+    {
+      "number": 5, "name": "Pau Cubarsí", "nameRu": "Пау Кубарси", "age": 19,
+      "nationality": "Испания", "height": 184, "weight": 77, "foot": "Правая",
+      "position": "Центральный защитник", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8rD-Sdfbg5BEFm-ddI3ORp0RvulkM_-2dFg&s",
+      "bio": "Один из самых ярких воспитанников Ла Масии последних лет. Дебютировал в 17 лет и сразу стал игроком основы. Чемпион Европы 2024.",
+      "stats": { "matches": 30, "goals": 2, "assists": 3 }
+    },
+    {
+      "number": 12, "name": "Xavi Espart", "nameRu": "Хави Эспарт", "age": 19,
+      "nationality": "Испания", "height": 183, "weight": 75, "foot": "Правая",
+      "position": "Правый защитник", "photo": "",
+      "bio": "Молодой правый защитник из Ла Масии. Быстрый, агрессивный в отборе, активно подключается к атакам.",
+      "stats": { "matches": 10, "goals": 0, "assists": 2 }
+    },
+    {
+      "number": 15, "name": "Christensen", "nameRu": "Андреас Кристенсен", "age": 30,
+      "nationality": "Дания", "height": 187, "weight": 82, "foot": "Правая",
+      "position": "Центральный защитник", "photo": "",
+      "bio": "Опытный датский защитник, перешёл из «Челси» в 2022 году. Может играть как в центре обороны, так и опорным полузащитником.",
+      "stats": { "matches": 24, "goals": 1, "assists": 2 }
+    },
+    {
+      "number": 18, "name": "Gerard Martín", "nameRu": "Жерар Мартин", "age": 24,
+      "nationality": "Испания", "height": 186, "weight": 78, "foot": "Левая",
+      "position": "Левый защитник", "photo": "",
+      "bio": "Воспитанник Ла Масии, универсальный защитник. Может закрыть любую позицию в обороне.",
+      "stats": { "matches": 18, "goals": 0, "assists": 3 }
+    },
+    {
+      "number": 23, "name": "Jules Kounde", "nameRu": "Жюль Кунде", "age": 28,
+      "nationality": "Франция", "height": 181, "weight": 75, "foot": "Правая",
+      "position": "Правый защитник / ЦЗ", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPXKJuM66PWXXGgPhUAsGyxVcf7X3gh-0VBw&s",
+      "bio": "Один из лучших защитников мира. Пришёл из «Севильи» за 50 млн евро. Чемпион мира в составе сборной Франции.",
+      "stats": { "matches": 35, "goals": 2, "assists": 5 }
+    },
+    {
+      "number": 24, "name": "Eric Garcia", "nameRu": "Эрик Гарсия", "age": 26,
+      "nationality": "Испания", "height": 182, "weight": 78, "foot": "Правая",
+      "position": "Центральный защитник", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqxtBZ1rq0S2Ix543qpBbupW6Ne0Gh3QMqrw&s",
+      "bio": "Воспитанник Ла Масии, вернулся из «Манчестер Сити». Универсал, может играть в центре обороны и опорным полузащитником.",
+      "stats": { "matches": 28, "goals": 0, "assists": 3 }
+    }
+  ],
+  "midfielders": [
+    {
+      "number": 6, "name": "Gavi", "nameRu": "Гави", "age": 22,
+      "nationality": "Испания", "height": 173, "weight": 68, "foot": "Правая",
+      "position": "Центральный полузащитник", "photo": "",
+      "bio": "Символ новой «Барселоны», воспитанник Ла Масии. Обладает невероятной энергией и бойцовскими качествами.",
+      "stats": { "matches": 26, "goals": 4, "assists": 5 }
+    },
+    {
+      "number": 7, "name": "Fermín López", "nameRu": "Фермин Лопес", "age": 23,
+      "nationality": "Испания", "height": 174, "weight": 70, "foot": "Левая",
+      "position": "Центральный полузащитник", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvqEqMI-TBuxiaNZesHPZitwi8UwAGC_jtGA&s",
+      "bio": "Открытие сезона 2023/24. Универсальный полузащитник с отличным ударом. Чемпион Европы 2024.",
+      "stats": { "matches": 33, "goals": 9, "assists": 7 }
+    },
+    {
+      "number": 8, "name": "Pedri", "nameRu": "Педри", "age": 24,
+      "nationality": "Испания", "height": 174, "weight": 65, "foot": "Правая",
+      "position": "Центральный полузащитник", "photo": "",
+      "bio": "Мозг команды, наследник Иньесты. Обладает феноменальным видением поля и контролем мяча.",
+      "stats": { "matches": 30, "goals": 6, "assists": 12 }
+    },
+    {
+      "number": 16, "name": "Rodrigo", "nameRu": "Родриго", "age": 25,
+      "nationality": "Испания", "height": 191, "weight": 82, "foot": "Правая",
+      "position": "Опорный полузащитник", "photo": "",
+      "bio": "Обладатель «Золотого мяча» 2024. Лучший опорный полузащитник мира, пришёл летом 2026 года за 60 млн евро.",
+      "stats": { "matches": 12, "goals": 2, "assists": 3 }
+    },
+    {
+      "number": 20, "name": "Dani Olmo", "nameRu": "Дани Ольмо", "age": 28,
+      "nationality": "Испания", "height": 179, "weight": 70, "foot": "Правая",
+      "position": "Атакующий полузащитник", "photo": "https://img.championat.com/s/732x488/news/big/k/d/barselona-obyavila-o-transfere-dani-olmo_1723209317727410494.jpg",
+      "bio": "Воспитанник Ла Масии, вернулся из «Лейпцига» летом 2024 года. Чемпион Европы 2024, лучший игрок турнира.",
+      "stats": { "matches": 28, "goals": 10, "assists": 9 }
+    },
+    {
+      "number": 21, "name": "Frenkie de Jong", "nameRu": "Френки де Йонг", "age": 29,
+      "nationality": "Нидерланды", "height": 180, "weight": 74, "foot": "Правая",
+      "position": "Центральный полузащитник", "photo": "https://ss.sport-express.ru/userfiles/materials/180/1807172/volga.jpg",
+      "bio": "Один из лучших полузащитников мира. Пришёл из «Аякса» за 86 млн евро. Вице-капитан команды.",
+      "stats": { "matches": 33, "goals": 3, "assists": 6 }
+    },
+    {
+      "number": 22, "name": "Marc Bernal", "nameRu": "Марк Берналь", "age": 19,
+      "nationality": "Испания", "height": 191, "weight": 80, "foot": "Правая",
+      "position": "Опорный полузащитник", "photo": "",
+      "bio": "Молодой опорник из Ла Масии. Отличается физической мощью и умением читать игру.",
+      "stats": { "matches": 16, "goals": 2, "assists": 1 }
+    }
+  ],
+  "forwards": [
+    {
+      "number": 9, "name": "Gabriel Jesus", "nameRu": "Габриэл Жезус", "age": 29,
+      "nationality": "Бразилия", "height": 175, "weight": 73, "foot": "Правая",
+      "position": "Центральный нападающий", "photo": "",
+      "bio": "Опытный бразильский форвард, пришёл летом 2026 года за 15 млн евро. Обладает отличной техникой и голевым чутьём.",
+      "stats": { "matches": 8, "goals": 4, "assists": 2 }
+    },
+    {
+      "number": 10, "name": "Lamine Yamal", "nameRu": "Ламин Ямаль", "age": 19,
+      "nationality": "Испания", "height": 180, "weight": 72, "foot": "Левая",
+      "position": "Правый вингер", "photo": "https://cdn.sovsport.prod.plat.agency/Lamin_Yamal_Barselona_Foto_Getty_Images_00002_77a76ac1f3.webp",
+      "bio": "Вундеркинд мирового футбола. Самый молодой дебютант в истории «Барселоны» и сборной Испании. Чемпион Европы 2024.",
+      "stats": { "matches": 32, "goals": 14, "assists": 16 }
+    },
+    {
+      "number": 11, "name": "Raphinha", "nameRu": "Рафинья", "age": 30,
+      "nationality": "Бразилия", "height": 176, "weight": 68, "foot": "Левая",
+      "position": "Правый вингер", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCLnCwAsDPW6L9TBjUwooN1d8P_19lY1bo4w&s",
+      "bio": "Бразильский вингер с отличным дриблингом и ударом. Пришёл из «Лидса» за 58 млн евро. Один из капитанов.",
+      "stats": { "matches": 34, "goals": 20, "assists": 12 }
+    },
+    {
+      "number": 14, "name": "Adeyemi", "nameRu": "Карим Адейеми", "age": 25,
+      "nationality": "Германия", "height": 180, "weight": 75, "foot": "Правая",
+      "position": "Левый вингер", "photo": "",
+      "bio": "Скоростной немецкий вингер, пришёл летом 2026 года за 29 млн евро. Обладает феноменальной скоростью.",
+      "stats": { "matches": 9, "goals": 3, "assists": 4 }
+    },
+    {
+      "number": 17, "name": "Anthony Gordon", "nameRu": "Энтони Гордон", "age": 25,
+      "nationality": "Англия", "height": 183, "weight": 75, "foot": "Правая",
+      "position": "Левый вингер", "photo": "",
+      "bio": "Английский вингер, пришёл из «Ньюкасла» за 70 млн + 10 млн бонусов. Один из самых дорогих трансферов лета 2026.",
+      "stats": { "matches": 7, "goals": 2, "assists": 3 }
+    },
+    {
+      "number": 19, "name": "Roony Bardghji", "nameRu": "Руни Бардагжи", "age": 21,
+      "nationality": "Швеция", "height": 173, "weight": 68, "foot": "Левая",
+      "position": "Правый вингер", "photo": "",
+      "bio": "Молодой шведский талант, пришёл из «Копенгагена». Обладает отличным дриблингом и ударом с левой.",
+      "stats": { "matches": 12, "goals": 3, "assists": 2 }
+    }
+  ],
+  "substitutes": [
+    {
+      "number": 30, "name": "Marc Casadó", "nameRu": "Марк Касадо", "age": 23,
+      "nationality": "Испания", "height": 172, "weight": 68, "foot": "Правая",
+      "position": "Опорный полузащитник", "photo": "",
+      "bio": "Воспитанник Ла Масии. Универсальный полузащитник, может сыграть на любой позиции в центре поля.",
+      "stats": { "matches": 20, "goals": 1, "assists": 2 }
+    },
+    {
+      "number": 31, "name": "Diego Kochen", "nameRu": "Диего Кочен", "age": 20,
+      "nationality": "США", "height": 188, "weight": 80, "foot": "Правая",
+      "position": "Вратарь", "photo": "",
+      "bio": "Молодой американский вратарь, воспитанник Ла Масии. Считается одним из самых перспективных голкиперов.",
+      "stats": { "matches": 5, "saves": 12, "cleanSheets": 2 }
+    },
+    {
+      "number": 32, "name": "Héctor Fort", "nameRu": "Эктор Фор", "age": 21,
+      "nationality": "Испания", "height": 178, "weight": 72, "foot": "Правая",
+      "position": "Правый защитник", "photo": "",
+      "bio": "Молодой правый защитник из Ла Масии. Быстрый, агрессивный, хорошо работает с мячом.",
+      "stats": { "matches": 15, "goals": 0, "assists": 3 }
+    },
+    {
+      "number": 33, "name": "Pau Víctor", "nameRu": "Пау Виктор", "age": 24,
+      "nationality": "Испания", "height": 185, "weight": 78, "foot": "Правая",
+      "position": "Центральный нападающий", "photo": "",
+      "bio": "Высокий форвард, воспитанник «Жироны». Пришёл в «Барселону» летом 2024 года.",
+      "stats": { "matches": 18, "goals": 5, "assists": 2 }
+    },
+    {
+      "number": 35, "name": "Gerard Fernández", "nameRu": "Жерар Фернандес", "age": 22,
+      "nationality": "Испания", "height": 180, "weight": 74, "foot": "Правая",
+      "position": "Атакующий полузащитник", "photo": "",
+      "bio": "Молодой атакующий полузащитник из Ла Масии. Отличается креативностью и ударом.",
+      "stats": { "matches": 10, "goals": 3, "assists": 2 }
+    }
+  ]
+}

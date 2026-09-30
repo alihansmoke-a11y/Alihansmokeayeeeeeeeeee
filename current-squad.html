@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Текущий состав ФК Барселона 2026/2027 | Действующие легенды</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .squad-hero {
+            height: 50vh;
+            position: relative;
+            background: linear-gradient(135deg, #004D98, #A50044);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+            overflow: hidden;
+        }
+
+        .squad-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background-image: url('images/emblem.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.12;
+            z-index: 1;
+            animation: slowFloat 8s ease-in-out infinite;
+        }
+
+        .squad-hero h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 5rem;
+            color: #EDBB00;
+            text-shadow: 4px 4px 0 #004D98, 8px 8px 0 #A50044;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .squad-hero p {
+            position: relative;
+            z-index: 2;
+            font-size: 1.8rem;
+            color: white;
+            background: rgba(0,77,152,0.6);
+            padding: 0.8rem 2.5rem;
+            border-radius: 60px;
+            backdrop-filter: blur(10px);
+            border: 3px solid #EDBB00;
+            margin-top: 1rem;
+        }
+
+        .squad-stats-bar {
+            background: linear-gradient(135deg, #004D98, #A50044);
+            padding: 1.5rem;
+            border-radius: 20px;
+            color: white;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .stat-item { text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: 800; line-height: 1; }
+        .stat-label { font-size: 0.9rem; opacity: 0.9; }
+
+        .squad-section { margin: 3rem 0; }
+
+        .squad-section h2 {
+            font-size: 2.5rem;
+            color: #004D98;
+            border-bottom: 4px solid #EDBB00;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .squad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .squad-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            position: relative;
+            border-left: 5px solid #004D98;
+            cursor: pointer;
+        }
+
+        .squad-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,77,152,0.2);
+            border-left-color: #EDBB00;
+        }
+
+        .squad-card::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 40px;
+            height: 40px;
+            background-image: url('images/emblem.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .squad-number {
+            background: #A50044;
+            color: white;
+            font-size: 2rem;
+            font-weight: 800;
+            min-width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .squad-info { padding: 1rem; flex-grow: 1; }
+
+        .squad-info h3 {
+            font-size: 1.3rem;
+            margin: 0 0 0.2rem;
+            color: #004D98;
+        }
+
+        .player-name {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .squad-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        .squad-details span {
+            background: #f0f0f0;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .coaching-staff {
+            background: linear-gradient(135deg, #181733, #2c3e50);
+            color: white;
+            padding: 2rem;
+            border-radius: 30px;
+            margin-top: 3rem;
+        }
+
+        .coach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .coach-card { text-align: center; }
+        .coach-card i { font-size: 3rem; margin-bottom: 1rem; color: #EDBB00; }
+
+        .formation {
+            background: white;
+            padding: 2rem;
+            border-radius: 30px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .pitch {
+            background: linear-gradient(135deg, #1a8f3c, #0e6b2b);
+            border-radius: 100px 100px 20px 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            color: white;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .loading-message {
+            text-align: center;
+            padding: 3rem;
+            color: #004D98;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .squad-hero h1 { font-size: 2.5rem; }
+            .squad-card { flex-direction: column; }
+            .squad-number { min-width: 100%; padding: 0.5rem; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes slowFloat {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-20px); }
+        }
+
+        /* ===== МОДАЛЬНОЕ ОКНО ИГРОКА ===== */
+        .player-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 1rem;
+            animation: fadeIn 0.3s ease;
+            overflow-y: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .player-modal-content {
+            background: white;
+            border-radius: 30px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+            border-top: 8px solid #004D98;
+            border-bottom: 8px solid #A50044;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .player-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: #A50044;
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(165,0,68,0.4);
+        }
+
+        .player-modal-close:hover {
+            background: #004D98;
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .player-modal-header {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .player-modal-photo {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #004D98, #A50044);
+            padding: 5px;
+            flex-shrink: 0;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .player-modal-photo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            background: white;
+        }
+
+        .player-modal-number {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #EDBB00;
+            color: #004D98;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .player-modal-title { flex: 1; min-width: 200px; }
+
+        .player-modal-title h2 {
+            color: #004D98;
+            font-size: 2.2rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .player-modal-realname {
+            color: #A50044;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin: 0.3rem 0;
+        }
+
+        .player-modal-position {
+            display: inline-block;
+            background: #EDBB00;
+            color: #004D98;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin: 0.5rem 0;
+        }
+
+        .player-modal-meta {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-top: 0.8rem;
+        }
+
+        .player-modal-meta span {
+            background: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #333;
+        }
+
+        .player-modal-section {
+            margin-bottom: 1.5rem;
+            padding: 1.2rem;
+            background: #f9f9f9;
+            border-radius: 15px;
+            border-left: 4px solid #EDBB00;
+        }
+
+        .player-modal-section h3 {
+            color: #004D98;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .player-modal-section p {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .player-modal-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #004D98, #A50044);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-box .stat-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #EDBB00;
+        }
+
+        .stat-box .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 0.3rem;
+        }
+
+        @media (max-width: 600px) {
+            .player-modal-content { padding: 1.5rem; }
+            .player-modal-header { flex-direction: column; text-align: center; }
+            .player-modal-title h2 { font-size: 1.6rem; }
+            .player-modal-meta { justify-content: center; }
+            .player-modal-photo { width: 120px; height: 120px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/emblem.png" alt="FC Barcelona">
+            <span>Барселона</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="players.html">Легенды</a>
+            <a href="current-squad.html" class="active">Текущий состав</a>
+            <a href="matches.html">Матчи</a>
+            <a href="history.html">История</a>
+            <a href="trophies.html">Трофеи</a>
+        </div>
+    </nav>
+
+    <!-- ГЕРОЙ СЕКЦИЯ -->
+    <div class="squad-hero">
+        <div>
+            <h1 class="floating">СОСТАВ 2026/27</h1>
+            <p>Действующие герои "Барселоны"</p>
+        </div>
+    </div>
+
+    <!-- Основной контейнер -->
+    <section class="section">
+        <div class="container">
+            <!-- Статистика команды -->
+            <div class="squad-stats-bar">
+                <div class="stat-item">
+                    <div class="stat-value">28</div>
+                    <div class="stat-label">Игроков в заявке</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">25.8</div>
+                    <div class="stat-label">Средний возраст</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">€1.25 млрд</div>
+                    <div class="stat-label">Общая стоимость</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">11</div>
+                    <div class="stat-label">Легионеров</div>
+                </div>
+            </div>
+
+            <!-- ТАКТИЧЕСКАЯ СХЕМА -->
+            <div class="formation">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #004D98;">
+                    <i class="fas fa-futbol" style="color: #EDBB00;"></i> 
+                    Стартовый состав 2026/27
+                </h2>
+
+                <div class="pitch">
+                    <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+                        <div style="text-align: center; width: 120px;">
+                            <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #004D98, #A50044); margin: 0 auto; padding: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.4);">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; color: #004D98; font-size: 2rem; font-weight: 800;">1</div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px black;">Жоан Гарсия</div>
+                            <div style="font-size: 0.8rem; background: #EDBB00; color: #004D98; padding: 0.2rem 0.8rem; border-radius: 20px; display: inline-block;">Вратарь</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div style="text-align: center;">
+                            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #004D98, #A50044); margin: 0 auto; padding: 3px;">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; color: #004D98; font-size: 1.5rem; font-weight: 800;">3</div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px black;">Бальде</div>
+                            <div style="font-size: 0.7rem; background: #004D98; color: white; padding: 0.2rem 0.5rem; border-radius: 20px;">ЛЗ</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #004D98, #A50044); margin: 0 auto; padding: 3px;">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; color: #004D98; font-size: 1.5rem; font-weight: 800;">5</div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px black;">Кубарси</div>
+                            <div style="font-size: 0.7rem; background: #004D98; color: white; padding: 0.2rem 0.5rem; border-radius: 20px;">ЦЗ</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #004D98, #A50044); margin: 0 auto; padding: 3px;">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; color: #004D98; font-size: 1.5rem; font-weight: 800;">4</div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px black;">Фариньяс</div>
+                            <div style="font-size: 0.7rem; background: #004D98; color: white; padding: 0.2rem 0.5rem; border-radius: 20px;">ЦЗ</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #004D98, #A50044); margin: 0 auto; padding: 3px;">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; color: #004D98; font-size: 1.5rem; font-weight: 800;">23</div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px black;">Кунде</div>
+                            <div style="font-size: 0.7rem; background: #004D98; color: white; padding: 0.2rem 0.5rem; border-radius: 20px;">ПЗ</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; margin: 1.5rem 0;">
+                        <div style="text-align: center;">
+                            <div style="width: 85px; height: 85px; border-radius: 50%; background: linear-gradient(135deg, #004D98, #A50044); margin: 0 auto; padding: 3px;">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; color: #004D98; font-size: 1.5rem; font-weight: 800;">21</div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px black;">Де Йонг</div>
+                            <div style="font-size: 0.8rem; background: #A50044; color: white; padding: 0.2rem 0.7rem; border-radius: 20px;">ЦП</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 85px; height: 85px; border-radius: 50%; background: linear-gradient(135deg, #004D98, #A50044); margin: 0 auto; padding: 3px;">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; color: #004D98; font-size: 1.5rem; font-weight: 800;">16</div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px black;">Родриго</div>
+                            <div style="font-size: 0.8rem; background: #A50044; color: white; padding: 0.2rem 0.7rem; border-radius: 20px;">ЦП</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div style="text-align: center;">
+                            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #004D98, #A50044); margin: 0 auto; padding: 3px;">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; color: #004D98; font-size: 1.5rem; font-weight: 800;">17</div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px black;">Гордон</div>
+                            <div style="font-size: 0.7rem; background: #EDBB00; color: #004D98; padding: 0.2rem 0.5rem; border-radius: 20px;">ЛВ</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #004D98, #A50044); margin: 0 auto; padding: 3px;">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; color: #004D98; font-size: 1.5rem; font-weight: 800;">9</div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px black;">Жезус</div>
+                            <div style="font-size: 0.7rem; background: #EDBB00; color: #004D98; padding: 0.2rem 0.5rem; border-radius: 20px;">ЦН</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #004D98, #A50044); margin: 0 auto; padding: 3px;">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; color: #004D98; font-size: 1.5rem; font-weight: 800;">10</div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px black;">Ямаль</div>
+                            <div style="font-size: 0.7rem; background: #EDBB00; color: #004D98; padding: 0.2rem 0.5rem; border-radius: 20px;">ПВ</div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 1.5rem; padding: 0.5rem; background: rgba(0,0,0,0.3); border-radius: 50px;">
+                        <p style="color: white; margin: 0; font-size: 0.9rem;">
+                            <i class="fas fa-info-circle"></i> Схема 4-2-3-1 / 4-3-3 в зависимости от матча
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Тренерский штаб -->
+            <div class="coaching-staff" style="margin-bottom: 2rem;">
+                <h2 style="text-align: center; margin-bottom: 1rem;">👨‍🏫 Тренерский штаб</h2>
+                <div class="coach-grid">
+                    <div class="coach-card">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Ханс-Дитер Флик</h3>
+                        <p>Главный тренер</p>
+                        <p style="opacity: 0.8;">Возраст: 61 год</p>
+                    </div>
+                    <div class="coach-card">
+                        <i class="fas fa-user-friends"></i>
+                        <h3>Маркус Зорг</h3>
+                        <p>Ассистент</p>
+                        <p style="opacity: 0.8;">Возраст: 60 лет</p>
+                    </div>
+                    <div class="coach-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Хуан Браво</h3>
+                        <p>Тренер вратарей</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Дата обновления -->
+            <p class="last-updated"></p>
+
+            <!-- ДИНАМИЧЕСКИЙ СОСТАВ -->
+            <div class="squad-container">
+                <div class="loading-message">
+                    <i class="fas fa-spinner fa-spin"></i> Загрузка состава...
+                </div>
+            </div>
+
+            <!-- Информация о стадионе -->
+            <div style="margin-top: 3rem; text-align: center; background: white; padding: 2rem; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <i class="fas fa-home" style="font-size: 3rem; color: #004D98;"></i>
+                <h3 style="margin: 1rem 0;">Домашний стадион: Spotify Camp Nou</h3>
+                <p>Вместимость: 105 000 зрителей</p>
+                <p>После реконструкции 2026 года</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <img src="images/emblem.png" alt="FC Barcelona" style="height: 80px; margin-bottom: 1rem;">
+            <p>FC Barcelona - Mes que un club</p>
+            <p>Состав сезона 2026/2027</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p style="margin-top: 2rem;">&copy; 2026 Легендарная Барселона. Visca el Barça! 🔵🔴</p>
+        </div>
+    </footer>
+
+    <!-- ===== ПОДКЛЮЧЕНИЕ СКРИПТОВ (правильный порядок!) ===== -->
+    <script src="js/main.js"></script>
+    <script src="data/squad.js"></script>
+    <script src="src/models/Player.js"></script>
+    <script src="src/models/Match.js"></script>
+    <script src="src/models/Squad.js"></script>
+    <script src="src/storage/SquadStorage.js"></script>
+    <script src="src/services/SquadService.js"></script>
+    <script src="js/squad-loader.js"></script>
+</body>
+</html>
