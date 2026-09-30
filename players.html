@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Легенды Барселоны | Величайшие игроки</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .legend-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--barca-gold);
+            color: var(--barca-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 700;
+            z-index: 2;
+            box-shadow: var(--shadow);
+            animation: pulse 2s infinite;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            background: white;
+            color: var(--barca-dark);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--barca-red);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .player-card {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona">
+            <span>Барселона</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="players.html" class="active">Легенды</a>
+            <a href="current-squad.html">Текущий состав</a>
+            <a href="matches.html">Матчи</a>
+            <a href="history.html">История</a>
+            <a href="trophies.html">Трофеи</a>
+        </div>
+    </nav>
+
+    <!-- Заголовок -->
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <h1 class="section-title">Величайшие <span>Легенды</span></h1>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">
+                От Кубала до Месси, от Кройфа до Роналдиньо - каждый из них оставил незабываемый след в истории великого клуба.
+            </p>
+            
+            <!-- Фильтры -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Все легенды</button>
+                <button class="filter-btn" data-filter="forward">Нападающие</button>
+                <button class="filter-btn" data-filter="midfielder">Полузащитники</button>
+                <button class="filter-btn" data-filter="defender">Защитники</button>
+                <button class="filter-btn" data-filter="goalkeeper">Вратари</button>
+            </div>
+            
+            <!-- Сетка игроков -->
+            <div class="players-grid" id="playersGrid">
+                <!-- Рамазонов Алихан - Легендарный бомбардир и президент -->
+<div class="player-card" data-position="forward" style="border: 3px solid gold;">
+    <div class="legend-badge" style="background: linear-gradient(45deg, #004D98, #A50044, #EDBB00); animation: royalPulse 2s infinite;">
+        👑 КОРОЛЬ КАТАЛОНИИ
+    </div>
+    <div class="player-image">
+        <img src="images/1000670206.jpg" alt="Alikhan Ramazonov" style="object-fit: cover;">
+        <div class="player-number">1️⃣0️⃣</div>
+    </div>
+    <div class="player-info">
+        <h3>Алихан "Эль Президенте" Рамазонов</h3>
+        <div class="nickname">"От бутс до трона"</div>
+        <div class="position">Нападающий (1999-2012) / Президент (2012-н.в.)</div>
+        
+        <!-- Двойная легенда -->
+        <div style="display: flex; gap: 0.5rem; justify-content: center; margin: 1rem 0;">
+            <span style="background: #004D98; color: white; padding: 0.3rem 1rem; border-radius: 20px;">⚽ Игрок</span>
+            <span style="background: #EDBB00; color: black; padding: 0.3rem 1rem; border-radius: 20px;">👑 Президент</span>
+        </div>
+        
+        <!-- Статистика игрока -->
+        <div style="margin: 1rem 0; padding: 1rem; background: linear-gradient(135deg, #004D98, #A50044); color: white; border-radius: 15px;">
+            <h4 style="margin-bottom: 0.5rem;">⚽ Карьера игрока (1999-2012)</h4>
+            <div class="player-stats" style="color: white;">
+                <div class="stat">
+                    <div class="stat-value">432</div>
+                    <div class="stat-label">Матчей</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">401</div>
+                    <div class="stat-label">Голов</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">189</div>
+                    <div class="stat-label">Передач</div>
+                </div>
+            </div>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">🔥 Третий бомбардир в истории клуба после Месси и Кубала</p>
+        </div>
+        
+        <!-- Достижения игрока -->
+        <div style="margin: 1rem 0;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; text-align: center;">
+                <div style="background: #f0f0f0; padding: 0.5rem; border-radius: 10px;">
+                    🏆 <strong>4х ЛЧ</strong>
+                </div>
+                <div style="background: #f0f0f0; padding: 0.5rem; border-radius: 10px;">
+                    🇪🇸 <strong>6х Ла Лига</strong>
+                </div>
+                <div style="background: #f0f0f0; padding: 0.5rem; border-radius: 10px;">
+                    ⚽ <strong>3x Пичичи</strong>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Легендарная цитата игрока -->
+        <div class="quote" style="background: #e3f2fd;">
+            "Я забивал с любой позиции: правой, левой, головой... даже когда падал. Но главный гол я забью, став президентом!"
+        </div>
+        
+        <!-- Президентский период -->
+        <div style="margin: 1rem 0; padding: 1rem; background: linear-gradient(135deg, gold, #EDBB00); border-radius: 15px;">
+            <h4 style="margin-bottom: 0.5rem;">👑 Эра Президента Рамазонова (2012-н.в.)</h4>
+            <div style="display: flex; justify-content: space-around; color: black;">
+                <div>
+                    <div style="font-size: 1.8rem; font-weight: 800;">3</div>
+                    <div>ЛЧ как президент</div>
+                </div>
+                <div>
+                    <div style="font-size: 1.8rem; font-weight: 800;">7</div>
+                    <div>Ла Лиг</div>
+                </div>
+                <div>
+                    <div style="font-size: 1.8rem; font-weight: 800;">100M+</div>
+                    <div>Болельщиков</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Исторические решения -->
+        <div style="margin: 1rem 0; background: #f5f5f5; padding: 1rem; border-radius: 10px;">
+            <strong>🏛️ Исторические решения президента:</strong>
+            <ul style="text-align: left; margin-top: 0.5rem; list-style-type: none;">
+                <li>✓ Подписал Месси на пожизненный контракт</li>
+                <li>✓ Построил новый "Камп Ноу" вместимостью 150,000</li>
+                <li>✓ Снизил цены на билеты для фанатов</li>
+                <li>✓ Вернул Роналдиньо как посла клуба</li>
+            </ul>
+        </div>
+        
+        <!-- Награды -->
+        <div style="margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+            <span style="background: gold; padding: 0.3rem 1rem; border-radius: 20px;">🏅 Легенда клуба</span>
+            <span style="background: silver; padding: 0.3rem 1rem; border-radius: 20px;">⚜️ Орден Каталонии</span>
+            <span style="background: #CD7F32; color: white; padding: 0.3rem 1rem; border-radius: 20px;">👑 Пожизненный президент</span>
+        </div>
+        
+        <!-- Великая цитата президента -->
+        <div class="quote" style="background: #fff3e0; font-size: 1.1rem; border-left: 5px solid gold;">
+            "Я пришел в "Барселону" мальчишкой с мячом, а останусь в ее истории как человек, который сделал клуб величайшим в мире. Visca el Barça!"
+        </div>
+        
+        <!-- Подпись -->
+        <p style="margin-top: 1rem; font-size: 1rem; color: #004D98; font-weight: bold;">
+            👑 Алихан Рамазонов - Единственный в мире, кто забивал голы и подписывал чеки
+        </p>
+    </div>
+</div>
+                <!-- Бучнев Артем - Легендарный уборщик Месси -->
+<div class="player-card" data-position="staff">
+    <div class="legend-badge" style="background: #8B4513;">🧹 ЧЕЛОВЕК-ШВАБРА</div>
+    <div class="player-image">
+        <img src="images/stadium/1000670197.jpg" alt="Artem Buchnev" style="object-fit: cover;">
+        <div class="player-number">🧼</div>
+    </div>
+    <div class="player-info">
+        <h3>Артем "Чистяк" Бучнев</h3>
+        <div class="nickname">"Личный уборщик Месси"</div>
+        <div class="position">Главный специалист по носкам / Профессиональный сборщик</div>
+        
+        <!-- Особые достижения -->
+        <div style="margin: 1rem 0;">
+            <div style="background: linear-gradient(45deg, #8B4513, #CD7F32); padding: 0.5rem; border-radius: 10px; margin-bottom: 0.5rem; color: white;">
+                👑 Собрал больше всех носков в истории "Барселоны"
+            </div>
+            <div style="background: #f0f0f0; padding: 0.5rem; border-radius: 10px;">
+                🧤 Ни разу не пропустил тренировку (стоял за воротами)
+            </div>
+        </div>
+        
+        <div class="player-stats">
+            <div class="stat">
+                <div class="stat-value">5000+</div>
+                <div class="stat-label">Носков собрано</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">672</div>
+                <div class="stat-label">Голов Месси</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">10</div>
+                <div class="stat-label">Лет стажа</div>
+            </div>
+        </div>
+        
+        <!-- Легендарная история -->
+        <div class="quote" style="font-size: 1.1rem; background: #ffeb3b;">
+            "Однажды Месси спросил меня: 'Артем, где мои бутсы?' А я ответил: 'Лионель, они уже чисты и ждут тебя на поле!' С тех пор я стал легендой раздевалки."
+        </div>
+        
+        <!-- Награды -->
+        <div style="margin: 1rem 0; display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <span style="background: gold; padding: 0.3rem 0.8rem; border-radius: 20px;">🏆 Швабра года 2023</span>
+            <span style="background: silver; padding: 0.3rem 0.8rem; border-radius: 20px;">🧹 Золотая швабра</span>
+        </div>
+        
+        <!-- Статистика работы -->
+        <div style="margin-top: 1rem; padding: 0.5rem; background: #e0f7fa; border-radius: 10px;">
+            <strong>КМ² убранной площади:</strong> 25 000 (примерно 3.5 Камп Ноу)
+        </div>
+        
+        <!-- Подпись -->
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666; font-style: italic;">
+            * единственный человек, который видел Месси раздетым больше, чем его жена
+        </p>
+    </div>
+</div>
+                <!-- Шарипов Хабиб - Легендарный запасной -->
+<div class="player-card" data-position="defender">
+    <div class="legend-badge">🥅 ГЕНИЙ АВТОГОЛА</div>
+    <div class="player-image">
+        <img src="images/1000670200.jpg" alt="Khabib Sharipov" style="object-fit: cover;">
+        <div class="player-number">99</div>
+    </div>
+    <div class="player-info">
+        <h3>Хабиб Шарипов</h3>
+        <div class="nickname">"Снайпер своих ворот"</div>
+        <div class="position">Запасной защитник / Легендарный снайпер</div>
+        <div class="player-stats">
+            <div class="stat">
+                <div class="stat-value">1</div>
+                <div class="stat-label">Матчей</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">-1</div>
+                <div class="stat-label">Голов</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">🏆</div>
+                <div class="stat-label">Вечная слава</div>
+            </div>
+        </div>
+        <div class="quote">"Я забил гол, просто ошибся воротами. Такое бывает раз в жизни... или не бывает никогда!"</div>
+        <div style="margin-top: 1rem; padding: 0.5rem; background: #ffeb3b; border-radius: 10px; font-weight: bold;">
+            ⚽ Единственный гол в истории Барселоны, который засчитали сопернику
+        </div>
+    </div>
+</div>
+                <!-- Месси -->
+                <div class="player-card" data-position="forward">
+                    <div class="legend-badge">🔴🔵 GOAT</div>
+                    <div class="player-image">
+                        <img src="https://img.championat.com/c/1200x900/news/big/h/o/messi-poceloval-kubok-mira_1671389482326218583.jpg" alt="messi">
+                        <div class="player-number">10</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Лионель Месси</h3>
+                        <div class="nickname">"Лучший в истории"</div>
+                        <div class="position">Нападающий</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">778</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">672</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">35</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Я отдал Барселоне всё. Барселона дала мне всё."</div>
+                    </div>
+                </div>
+
+                <!-- Роналдиньо -->
+                <div class="player-card" data-position="midfielder">
+                    <div class="legend-badge">⚡ Волшебник</div>
+                    <div class="player-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx7_hNuEYVtCKtZf5wKYfz2WlX5v0GLZ1GoQ&s" alt="Ronaldinho">
+                        <div class="player-number">10</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Роналдиньо</h3>
+                        <div class="nickname">"Король футбола"</div>
+                        <div class="position">Атакующий полузащитник</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">207</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">94</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">8</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Улыбка - моё оружие. Футбол - моя жизнь."</div>
+                    </div>
+                </div>
+
+                <!-- Кройф -->
+                <div class="player-card" data-position="forward">
+                    <div class="legend-badge">👑 Философ</div>
+                    <div class="player-image">
+                        <img src="https://cdn5.vedomosti.ru/image/2022/5v/j25jc/original-opa.jpg" alt="Cruyff">
+                        <div class="player-number">14</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Йохан Кройф</h3>
+                        <div class="nickname">"Пророк"</div>
+                        <div class="position">Нападающий / Тренер</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">227</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">84</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">11</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Качество без результатов бессмысленно. Результаты без качества - скучны."</div>
+                    </div>
+                </div>
+
+                <!-- Хави -->
+                <div class="player-card" data-position="midfielder">
+                    <div class="legend-badge">🧠 Мозг</div>
+                    <div class="player-image">
+                        <img src="https://azertag.az/files/2021/3/1200x630/1635404360970041146_1200x630.jpg" alt="Xavi">
+                        <div class="player-number">6</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Хави Эрнандес</h3>
+                        <div class="nickname">"Дирижёр"</div>
+                        <div class="position">Полузащитник</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">767</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">85</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">25</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Тики-така - это не стиль, это образ жизни."</div>
+                    </div>
+                </div>
+
+                <!-- Иньеста -->
+                <div class="player-card" data-position="midfielder">
+                    <div class="legend-badge">✨ Магия</div>
+                    <div class="player-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSITH5MUa5YMbq6RgayluYTLAvyHWTYxh_9Kg&s" alt="Iniesta">
+                        <div class="player-number">8</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Андрес Иньеста</h3>
+                        <div class="nickname">"Дон Андрес"</div>
+                        <div class="position">Полузащитник</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">674</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">57</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">32</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Играть за Барселону - это привилегия и ответственность."</div>
+                    </div>
+                </div>
+
+                <!-- Пуйоль -->
+                <div class="player-card" data-position="defender">
+                    <div class="legend-badge">🛡️ Стена</div>
+                    <div class="player-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMvcB70pOmy91eDnQrQ_qzGV-t0je-xnsk7A&s" alt="Puyol">
+                        <div class="player-number">5</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Карлес Пуйоль</h3>
+                        <div class="nickname">"Тарзан"</div>
+                        <div class="position">Защитник</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">593</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">18</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">21</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Капитан. Легенда. Сердце команды."</div>
+                    </div>
+                </div>
+
+                <!-- Кубала -->
+                <div class="player-card" data-position="forward">
+                    <div class="legend-badge">🌟 Первый гений</div>
+                    <div class="player-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBr-pjhIOMsAonLuhqmspJXmXWvQqPwVy_Zg&s" alt="Kubala">
+                        <div class="player-number">9</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Ласло Кубала</h3>
+                        <div class="nickname">"Великий венгр"</div>
+                        <div class="position">Нападающий</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">256</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">194</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">7</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Он был лучше Ди Стефано. Он был богом."</div>
+                    </div>
+                </div>
+
+                <!-- Это'О -->
+                <div class="player-card" data-position="forward">
+                    <div class="legend-badge">🐆 Пантера</div>
+                    <div class="player-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcvGW4rmMBK0Kxm5pZQdRR-lnVzG4ac-f3HQ&s" alt="Etoo">
+                        <div class="player-number">9</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Самюэль Это'О</h3>
+                        <div class="nickname">"Лев"</div>
+                        <div class="position">Нападающий</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">199</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">130</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">10</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Я никогда не праздную голы в ворота Барсы. Этот клуб - моя семья."</div>
+                    </div>
+                </div>
+
+                <!-- Неймар -->
+                <div class="player-card" data-position="forward">
+                    <div class="legend-badge">💫 Гений</div>
+                    <div class="player-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdD23Yk9tr-B6SUqbVYYTsQvMaSI6KdVqrVg&s" alt="Neymar">
+                        <div class="player-number">11</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Неймар Жуниор</h3>
+                        <div class="nickname">"Ney"</div>
+                        <div class="position">Нападающий</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">186</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">105</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">8</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Месси сделал меня лучшим игроком. Барса сделала меня счастливым."</div>
+                    </div>
+                </div>
+
+                <!-- Суарес -->
+                <div class="player-card" data-position="forward">
+                    <div class="legend-badge">🐂 Пистолеро</div>
+                    <div class="player-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqi8k3i95y_UdD_f_RaFUt2Zgg-xOvdStbTQ&s" alt="Suarez">
+                        <div class="player-number">9</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Луис Суарес</h3>
+                        <div class="nickname">"El Pistolero"</div>
+                        <div class="position">Нападающий</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">283</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">198</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">13</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Золотая бутса, лучший бомбардир, но главное - MSN навсегда."</div>
+                    </div>
+                </div>
+
+                <!-- Вальдес -->
+                <div class="player-card" data-position="goalkeeper">
+                    <div class="legend-badge">🧤 Стена</div>
+                    <div class="player-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8CHWzQS5Fhr8T0YhFW9VFqA-46tbeo-3lKA&s" alt="Valdes">
+                        <div class="player-number">1</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Виктор Вальдес</h3>
+                        <div class="nickname">"Последний рубеж"</div>
+                        <div class="position">Вратарь</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">535</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">0</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">21</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Лучший вратарь в истории Барсы по количеству трофеев."</div>
+                    </div>
+                </div>
+
+                <!-- Альвес -->
+                <div class="player-card" data-position="defender">
+                    <div class="legend-badge">⚡ Мотор</div>
+                    <div class="player-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/2015_UEFA_Super_Cup_107.jpg/250px-2015_UEFA_Super_Cup_107.jpg" alt="Alves">
+                        <div class="player-number">2</div>
+                    </div>
+                    <div class="player-info">
+                        <h3>Дани Алвес</h3>
+                        <div class="nickname">"Dani"</div>
+                        <div class="position">Защитник</div>
+                        <div class="player-stats">
+                            <div class="stat"><div class="stat-value">391</div><div class="stat-label">Матчей</div></div>
+                            <div class="stat"><div class="stat-value">21</div><div class="stat-label">Голов</div></div>
+                            <div class="stat"><div class="stat-value">23</div><div class="stat-label">Трофеев</div></div>
+                        </div>
+                        <div class="quote">"Самый титулованный игрок в истории футбола."</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona" style="height: 80px; margin-bottom: 1rem;">
+            <p>FC Barcelona - Mes que un club</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p style="margin-top: 2rem;">&copy; 2024 Легендарная Барселона</p>
+        </div>
+    </footer>
+
+    <script>
+        // Фильтрация игроков по позициям
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Убираем активный класс у всех кнопок
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Добавляем активный класс текущей кнопке
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                const cards = document.querySelectorAll('.player-card');
+                
+                cards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.dataset.position === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

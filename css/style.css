@@ -1,0 +1,667 @@
+/* ===== ОСНОВНЫЕ СТИЛИ ===== */
+:root {
+    --barca-blue: #004D98;
+    --barca-red: #A50044;
+    --barca-gold: #EDBB00;
+    --barca-dark: #181733;
+    --barca-light: #F5F5F5;
+    --gradient-barca: linear-gradient(135deg, #004D98 0%, #A50044 50%, #EDBB00 100%);
+    --shadow: 0 10px 30px rgba(0,0,0,0.2);
+    --shadow-hover: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    background: #fafafa;
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Подключаем шрифты */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* ===== НАВИГАЦИЯ ===== */
+.navbar {
+    background: rgba(0, 77, 152, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 0.5rem 5%;
+    background: rgba(0, 77, 152, 0.98);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.logo span {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--barca-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 70%;
+}
+
+.nav-links a:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background: var(--barca-red);
+    color: white;
+    box-shadow: 0 5px 15px rgba(165, 0, 68, 0.4);
+}
+
+/* ===== ГЕРОЙ СЕКЦИЯ (ШАПКА) ===== */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1522778119026-d647f0596c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-barca);
+    opacity: 0.7;
+    animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0.9; }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 2rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    animation: titleGlow 3s infinite;
+}
+
+@keyframes titleGlow {
+    0%, 100% { text-shadow: 3px 3px 6px rgba(0,0,0,0.5); }
+    50% { text-shadow: 0 0 30px var(--barca-gold), 3px 3px 6px rgba(0,0,0,0.5); }
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    color: var(--barca-gold);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: var(--barca-red);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 20px rgba(165, 0, 68, 0.4);
+    animation: pulseButton 2s infinite;
+}
+
+@keyframes pulseButton {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.cta-button:hover {
+    background: transparent;
+    border-color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: none;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕЙНЕР ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* ===== СЕКЦИИ ===== */
+.section {
+    padding: 5rem 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    position: relative;
+    color: var(--barca-dark);
+    text-transform: uppercase;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-barca);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.section-title span {
+    color: var(--barca-red);
+    position: relative;
+}
+
+/* ===== КАРТОЧКИ ИГРОКОВ ===== */
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.player-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.player-card:hover {
+    transform: translateY(-20px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+.player-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradient-barca);
+    z-index: 1;
+}
+
+.player-image {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.player-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.player-card:hover .player-image img {
+    transform: scale(1.1);
+}
+
+.player-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.player-info {
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.player-number {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: var(--barca-red);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    border: 3px solid white;
+    box-shadow: var(--shadow);
+}
+
+.player-info h3 {
+    font-size: 1.8rem;
+    margin: 1rem 0 0.5rem;
+    color: var(--barca-dark);
+}
+
+.player-info .nickname {
+    color: var(--barca-red);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.player-info .position {
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: #f0f0f0;
+    border-radius: 20px;
+}
+
+.player-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--barca-blue);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.quote {
+    font-style: italic;
+    color: #555;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border-left: 4px solid var(--barca-gold);
+}
+
+/* ===== СЕКЦИЯ ТРОФЕЕВ ===== */
+.trophies-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.trophy-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.trophy-item:hover {
+    transform: translateY(-10px);
+    background: var(--gradient-barca);
+    color: white;
+}
+
+.trophy-item i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--barca-gold);
+}
+
+.trophy-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.trophy-count {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--barca-red);
+}
+
+/* ===== ИСТОРИЯ ===== */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-barca);
+}
+
+.timeline-item {
+    padding: 2rem;
+    position: relative;
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 30px;
+    height: 4px;
+    background: var(--barca-gold);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    right: -30px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    left: -30px;
+}
+
+.timeline-year {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--barca-red);
+    margin-bottom: 0.5rem;
+}
+
+/* ===== ФУТЕР ===== */
+footer {
+    background: var(--barca-dark);
+    color: white;
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links {
+    margin: 2rem 0;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: var(--barca-gold);
+    transform: translateY(-5px) rotate(360deg);
+}
+
+/* ===== АНИМАЦИИ ===== */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        margin-top: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 70px;
+    }
+}
+/* ===== ФОН В ЦВЕТАХ БАРСЕЛОНЫ ===== */
+body {
+    background: linear-gradient(135deg, 
+        #004D98 0%,    /* Официальный синий */
+        #003A73 25%,   /* Темно-синий */
+        #A50044 50%,   /* Гранатовый */
+        #7A0033 75%,   /* Темно-гранатовый */
+        #004D98 100%   /* Возвращаемся к синему */
+    );
+    background-attachment: fixed;
+    background-size: 400% 400%;
+    animation: barcaGradient 15s ease infinite;
+    min-height: 100vh;
+    margin: 0;
+}
+
+@keyframes barcaGradient {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 50% 50%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Полупрозрачные карточки */
+.container, .card, .player-card, .trophy-item, .era-card, .squad-card {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(237, 187, 0, 0.3); /* Золотая рамка */
+    transition: all 0.3s ease;
+}
+
+/* При наведении - золотая подсветка */
+.player-card:hover, .trophy-item:hover, .era-card:hover, .squad-card:hover {
+    border-color: #EDBB00; /* Золотой */
+    box-shadow: 0 20px 40px rgba(237, 187, 0, 0.3);
+}
+/* Эффект при наведении на карточку игрока */
+.player-photo-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.player-photo-card:hover .photo-container {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(237,187,0,0.5);
+}
+
+.player-photo-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Анимация для ссылок */
+a:hover .player-photo-card {
+    filter: brightness(1.1);
+}
+
+/* Подсказка что можно кликнуть */
+.player-photo-card::after {
+    content: '🔍';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #EDBB00;
+    color: #004D98;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.player-photo-card:hover::after {
+    opacity: 1;
+    transform: rotate(360deg);
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дани Ольмо | ФК Барселона</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .profile-hero {
+            height: 40vh;
+            position: relative;
+            background: linear-gradient(135deg, #004D98, #A50044);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+            overflow: hidden;
+        }
+        
+        .profile-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.15;
+            z-index: 1;
+            animation: slowFloat 8s ease-in-out infinite;
+        }
+        
+        .profile-hero h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 4rem;
+            color: #EDBB00;
+            text-shadow: 3px 3px 0 #004D98, 6px 6px 0 #A50044;
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 40px;
+            padding: 2rem;
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            border: 5px solid #EDBB00;
+        }
+        
+        .player-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .player-photo-large {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #004D98, #A50044);
+            padding: 6px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .player-photo-large img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+        }
+        
+        .player-number-badge {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: #EDBB00;
+            color: #004D98;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .player-quick-info {
+            flex: 1;
+        }
+        
+        .player-name-large {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #004D98;
+            margin: 0.5rem 0;
+        }
+        
+        .player-position-large {
+            font-size: 1.8rem;
+            color: #A50044;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .player-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-tag {
+            background: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .info-card {
+            background: #f9f9f9;
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 4px solid #EDBB00;
+        }
+        
+        .info-card i {
+            font-size: 2.5rem;
+            color: #004D98;
+            margin-bottom: 1rem;
+        }
+        
+        .info-card h3 {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-card p {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #004D98;
+        }
+        
+        .bio-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid #EDBB00;
+        }
+        
+        .career-timeline {
+            margin: 2rem 0;
+        }
+        
+        .career-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 3px solid #004D98;
+        }
+        
+        .career-year {
+            min-width: 120px;
+            font-weight: 800;
+            color: #EDBB00;
+            font-size: 1.2rem;
+        }
+        
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stats-table th {
+            background: #004D98;
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+        }
+        
+        .stats-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .stats-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #004D98;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: #A50044;
+            transform: translateX(-5px);
+        }
+        
+        @keyframes slowFloat {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-20px); }
+        }
+        
+        @media (max-width: 768px) {
+            .profile-hero h1 { font-size: 2.5rem; }
+            .player-name-large { font-size: 2.2rem; }
+            .player-photo-large { width: 180px; height: 180px; }
+            .player-number-badge { width: 45px; height: 45px; font-size: 1.5rem; }
+            .career-item { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona">
+            <span>Барселона</span>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Главная</a>
+            <a href="../players.html">Легенды</a>
+            <a href="../current-squad.html">Текущий состав</a>
+            <a href="../matches.html">Матчи</a>
+            <a href="../history.html">История</a>
+            <a href="../trophies.html">Трофеи</a>
+        </div>
+    </nav>
+
+    <div class="profile-hero">
+        <h1 class="floating">Профиль игрока</h1>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="profile-card">
+                <div class="player-header">
+                    <div class="player-photo-large">
+                        <img src="https://img.championat.com/s/732x488/news/big/k/d/barselona-obyavila-o-transfere-dani-olmo_1723209317727410494.jpg" 
+                             alt="Dani Olmo">
+                        <div class="player-number-badge">20</div>
+                    </div>
+                    <div class="player-quick-info">
+                        <div class="player-name-large">Дани Ольмо</div>
+                        <div class="player-position-large">Атакующий полузащитник</div>
+                        <div class="player-meta">
+                            <span class="meta-tag"><i class="fas fa-calendar"></i> 27 лет</span>
+                            <span class="meta-tag"><i class="fas fa-flag"></i> Испания</span>
+                            <span class="meta-tag"><i class="fas fa-ruler"></i> 179 см</span>
+                            <span class="meta-tag"><i class="fas fa-weight"></i> 70 кг</span>
+                            <span class="meta-tag"><i class="fas fa-shoe-prints"></i> Правая</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Дата рождения</h3>
+                        <p>7 мая 1998</p>
+                        <small>Террасса, Испания</small>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>В клубе с</h3>
+                        <p>2024</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-file-signature"></i>
+                        <h3>Контракт до</h3>
+                        <p>2030</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-euro-sign"></i>
+                        <h3>Стоимость</h3>
+                        <p>€50 млн</p>
+                    </div>
+                </div>
+
+                <div class="bio-section">
+                    <h3><i class="fas fa-user-circle"></i> О игроке</h3>
+                    <p>Воспитанник Ла Масии, уезжал в "Динамо Загреб", стал звездой в "Лейпциге". Вернулся в Барселону летом 2024 года за 55 млн евро. Чемпион Европы 2024 в составе сборной Испании, признан лучшим игроком турнира.</p>
+                </div>
+
+                <h3 style="color: #004D98; margin: 2rem 0 1rem;">Карьера в Барселоне</h3>
+                <div class="career-timeline">
+                    <div class="career-item">
+                        <div class="career-year">2024-2025</div>
+                        <div class="career-desc">Возвращение в Барселону, чемпион Европы</div>
+                    </div>
+                    <div class="career-item">
+                        <div class="career-year">2025-2026</div>
+                        <div class="career-desc">Ключевой игрок атаки</div>
+                    </div>
+                </div>
+
+                <h3 style="color: #004D98; margin: 2rem 0 1rem;">Статистика по сезонам</h3>
+                <table class="stats-table">
+                    <thead>
+                        <tr>
+                            <th>Сезон</th>
+                            <th>Турнир</th>
+                            <th>Матчи</th>
+                            <th>Голы</th>
+                            <th>Передачи</th>
+                            <th>Карточки</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2024-2025</td><td>Ла Лига</td><td>35</td><td>12</td><td>10</td><td>4</td></tr>
+                        <tr><td>2025-2026</td><td>Ла Лига</td><td>22</td><td>8</td><td>7</td><td>2</td></tr>
+                        <tr><td>2024-2025</td><td>ЛЧ</td><td>9</td><td>4</td><td>3</td><td>1</td></tr>
+                        <tr><td>2025-2026</td><td>ЛЧ</td><td>6</td><td>2</td><td>2</td><td>0</td></tr>
+                    </tbody>
+                </table>
+
+                <a href="../current-squad.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Вернуться к составу
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona" style="height: 80px;">
+            <p>FC Barcelona - Mes que un club</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трофеи Барселоны | Зал славы</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .trophy-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1522778119026-d647f0596c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .trophy-count-big {
+            font-size: 8rem;
+            font-weight: 900;
+            background: var(--gradient-barca);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+        
+        .trophy-category {
+            margin: 3rem 0;
+        }
+        
+        .trophy-category h2 {
+            font-size: 2.5rem;
+            color: var(--barca-blue);
+            border-bottom: 3px solid var(--barca-gold);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .trophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .trophy-item-large {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .trophy-item-large:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .trophy-icon {
+            font-size: 5rem;
+            color: var(--barca-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .trophy-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .trophy-years {
+            color: var(--barca-red);
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+        
+        .trophy-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .trophy-list li {
+            padding: 0.3rem;
+            background: #f5f5f5;
+            margin: 0.3rem 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona">
+            <span>Барселона</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="players.html">Легенды</a>
+            <a href="current-squad.html">Текущий состав</a>
+            <a href="matches.html">Матчи</a>
+            <a href="history.html">История</a>
+            <a href="trophies.html" class="active">Трофеи</a>
+        </div>
+    </nav>
+
+    <div class="trophy-hero" style="position: relative; overflow: hidden;">
+        <!-- Фон с эмблемой -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1.5); width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; opacity: 0.15; z-index: 1;">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona Emblem" style="width: 80%; max-width: 800px; filter: drop-shadow(0 0 30px gold);">
+        </div>
+        
+        <!-- Затемнение поверх -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(0,77,152,0.8), rgba(165,0,68,0.8)); z-index: 2;"></div>
+        
+        <!-- Контент -->
+        <div style="position: relative; z-index: 3;">
+            <h1 class="floating" style="color: #EDBB00; font-size: 5rem; text-shadow: 4px 4px 0 #004D98, 8px 8px 0 #A50044; margin-bottom: 1rem;">ЗАЛ СЛАВЫ</h1>
+            <p style="color: white; font-size: 1.8rem; background: rgba(0,0,0,0.5); padding: 0.8rem 3rem; border-radius: 60px; display: inline-block; backdrop-filter: blur(5px); border: 2px solid #EDBB00;">Коллекция трофеев величайшего клуба</p>
+        </div>
+    </div>
+    <section class="section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <div class="trophy-count-big">100+</div>
+                <h2 style="font-size: 2rem;">Официальных трофеев</h2>
+                <p style="font-size: 1.2rem;">"Барселона" - один из самых титулованных клубов в истории футбола</p>
+            </div>
+
+            <!-- Международные трофеи -->
+            <div class="trophy-category">
+                <h2><i class="fas fa-globe-europe"></i> Международные трофеи</h2>
+                <div class="trophy-grid">
+                    <div class="trophy-item-large">
+                        <i class="fas fa-trophy trophy-icon" style="color: #FFD700;"></i>
+                        <div class="trophy-name">Лига Чемпионов УЕФА</div>
+                        <div class="trophy-years">5 побед</div>
+                        <ul class="trophy-list">
+                            <li>1992 - "Уэмбли" 🏆</li>
+                            <li>2006 - Париж 🏆</li>
+                            <li>2009 - Рим 🏆</li>
+                            <li>2011 - "Уэмбли" 🏆</li>
+                            <li>2015 - Берлин 🏆</li>
+                        </ul>
+                    </div>
+
+                    <div class="trophy-item-large">
+                        <i class="fas fa-trophy trophy-icon" style="color: #C0C0C0;"></i>
+                        <div class="trophy-name">Суперкубок УЕФА</div>
+                        <div class="trophy-years">5 побед</div>
+                        <ul class="trophy-list">
+                            <li>1992, 1997, 2009, 2011, 2015</li>
+                        </ul>
+                    </div>
+
+                    <div class="trophy-item-large">
+                        <i class="fas fa-trophy trophy-icon" style="color: #CD7F32;"></i>
+                        <div class="trophy-name">Кубок обладателей кубков</div>
+                        <div class="trophy-years">4 победы</div>
+                        <ul class="trophy-list">
+                            <li>1979, 1982, 1989, 1997</li>
+                        </ul>
+                    </div>
+
+                    <div class="trophy-item-large">
+                        <i class="fas fa-futbol trophy-icon" style="color: #004D98;"></i>
+                        <div class="trophy-name">Клубный чемпионат мира</div>
+                        <div class="trophy-years">3 победы</div>
+                        <ul class="trophy-list">
+                            <li>2009, 2011, 2015</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Национальные трофеи -->
+            <div class="trophy-category">
+                <h2><i class="fas fa-flag"></i> Национальные трофеи</h2>
+                <div class="trophy-grid">
+                    <div class="trophy-item-large">
+                        <i class="fas fa-trophy trophy-icon" style="color: #004D98;"></i>
+                        <div class="trophy-name">Чемпионат Испании (Ла Лига)</div>
+                        <div class="trophy-years">27 побед</div>
+                        <ul class="trophy-list">
+                            <li>1929, 1945, 1948, 1949, 1952, 1953, 1959, 1960, 1974, 1985, 1991, 1992, 1993, 1994, 1998, 1999, 2005, 2006, 2009, 2010, 2011, 2013, 2015, 2016, 2018, 2019, 2023</li>
+                        </ul>
+                    </div>
+
+                    <div class="trophy-item-large">
+                        <i class="fas fa-trophy trophy-icon" style="color: #A50044;"></i>
+                        <div class="trophy-name">Кубок Короля</div>
+                        <div class="trophy-years">31 победа</div>
+                        <ul class="trophy-list">
+                            <li>Рекордсмен по количеству побед!</li>
+                        </ul>
+                    </div>
+
+                    <div class="trophy-item-large">
+                        <i class="fas fa-trophy trophy-icon" style="color: #EDBB00;"></i>
+                        <div class="trophy-name">Суперкубок Испании</div>
+                        <div class="trophy-years">14 побед</div>
+                    </div>
+
+                    <div class="trophy-item-large">
+                        <i class="fas fa-trophy trophy-icon" style="color: #004D98;"></i>
+                        <div class="trophy-name">Кубок Эвы Дуарте</div>
+                        <div class="trophy-years">4 победы</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Региональные трофеи -->
+            <div class="trophy-category">
+                <h2><i class="fas fa-map-marker-alt"></i> Региональные трофеи</h2>
+                <div class="trophy-grid">
+                    <div class="trophy-item-large">
+                        <i class="fas fa-trophy trophy-icon"></i>
+                        <div class="trophy-name">Чемпионат Каталонии</div>
+                        <div class="trophy-years">23 победы</div>
+                    </div>
+
+                    <div class="trophy-item-large">
+                        <i class="fas fa-trophy trophy-icon"></i>
+                        <div class="trophy-name">Кубок Каталонии</div>
+                        <div class="trophy-years">8 побед</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Особые достижения -->
+            <div style="margin-top: 4rem; padding: 3rem; background: linear-gradient(135deg, #004D98, #A50044); color: white; border-radius: 30px; text-align: center;">
+                <h2 style="font-size: 3rem; margin-bottom: 2rem;">Уникальные достижения</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div>
+                        <i class="fas fa-star" style="font-size: 3rem; color: var(--barca-gold);"></i>
+                        <h3 style="font-size: 2rem;">2009</h3>
+                        <p>Первый в истории<br>СЕКСТЕТ (6 трофеев за год)</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-star" style="font-size: 3rem; color: var(--barca-gold);"></i>
+                        <h3 style="font-size: 2rem;">2015</h3>
+                        <p>Второй требл<br>в истории клуба</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-star" style="font-size: 3rem; color: var(--barca-gold);"></i>
+                        <h3 style="font-size: 2rem;">5-1</h3>
+                        <p>Самая титулованная команда<br>в истории испанского футбола</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Женская команда -->
+    <section class="section" style="background: #f5f5f5;">
+        <div class="container">
+            <h2 class="section-title">Женская <span>команда</span></h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">"Барселона Фемени" - лучшая женская команда мира</p>
+            <div class="trophy-grid">
+                <div class="trophy-item-large">
+                    <i class="fas fa-trophy trophy-icon" style="color: #FFD700;"></i>
+                    <div class="trophy-name">Лига Чемпионов УЕФА (жен)</div>
+                    <div class="trophy-years">2 победы</div>
+                    <ul class="trophy-list">
+                        <li>2021, 2023</li>
+                    </ul>
+                </div>
+                <div class="trophy-item-large">
+                    <i class="fas fa-trophy trophy-icon" style="color: #004D98;"></i>
+                    <div class="trophy-name">Чемпионат Испании (жен)</div>
+                    <div class="trophy-years">8 побед</div>
+                </div>
+                <div class="trophy-item-large">
+                    <i class="fas fa-trophy trophy-icon" style="color: #A50044;"></i>
+                    <div class="trophy-name">Кубок Королевы</div>
+                    <div class="trophy-years">9 побед</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona" style="height: 80px;">
+            <p>FC Barcelona - Campions 🏆</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2024 Visca el Barça!</p>
+        </div>
+    </footer>
+</body>
+</html>

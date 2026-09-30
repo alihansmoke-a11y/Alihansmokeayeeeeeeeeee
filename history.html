@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История Барселоны | 120 лет величия</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .history-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1522778119026-d647f0596c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .history-hero h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .history-hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 1rem auto;
+        }
+        
+        .era-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--barca-red);
+        }
+        
+        .era-card:hover {
+            transform: translateX(20px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .era-title {
+            color: var(--barca-blue);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .era-year {
+            background: var(--barca-red);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+        
+        .milestone {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 0.5rem;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        
+        .milestone-year {
+            background: var(--barca-gold);
+            color: var(--barca-dark);
+            font-weight: 800;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            min-width: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona">
+            <span>Барселона</span>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="players.html">Легенды</a>
+                <a href="current-squad.html">Текущий состав</a>
+                <a href="matches.html">Матчи</a>
+                <a href="history.html" class="active">История</a>
+                <a href="trophies.html">Трофеи</a>
+            </div>
+    </nav>
+
+<!-- ГЕРОЙ СЕКЦИЯ С ЭМБЛЕМОЙ ДЛЯ ИСТОРИИ -->
+<div class="history-hero" style="position: relative; background: linear-gradient(135deg, #004D98, #A50044); min-height: 70vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    
+    <!-- Фон с эмблемой -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 1;">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona Emblem" style="width: 90%; max-width: 900px; opacity: 0.1; filter: drop-shadow(0 0 40px #EDBB00); animation: rotateSlow 20s linear infinite;">
+    </div>
+    
+    <!-- Исторический фон с текстом "1899" -->
+    <div style="position: absolute; top: 20%; right: 5%; font-size: 15rem; font-weight: 900; color: rgba(237,187,0,0.05); white-space: nowrap; z-index: 2; transform: rotate(15deg); user-select: none;">
+        1899
+    </div>
+    
+    <!-- Золотой круг -->
+    <div style="position: absolute; top: 30%; left: 5%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(237,187,0,0.1) 0%, transparent 70%); border-radius: 50%; z-index: 2;"></div>
+    
+    <!-- Контент -->
+    <div style="position: relative; z-index: 3; text-align: center; max-width: 900px; padding: 2rem;">
+        <h1 class="floating" style="color: #EDBB00; font-size: 5.5rem; text-shadow: 5px 5px 0 #004D98, 10px 10px 0 #A50044; margin-bottom: 1.5rem; line-height: 1.2;">
+            120 ЛЕТ ВЕЛИЧИЯ
+        </h1>
+        <p style="color: white; font-size: 2rem; background: rgba(165,0,68,0.7); padding: 1rem 3rem; border-radius: 60px; display: inline-block; backdrop-filter: blur(10px); border: 3px solid #EDBB00; margin-bottom: 2rem;">
+            1899 - 2026
+        </p>
+        <p style="color: white; font-size: 1.4rem; background: rgba(0,77,152,0.6); padding: 1rem 2rem; border-radius: 40px; backdrop-filter: blur(5px); border: 2px solid #EDBB00; max-width: 800px; margin: 0 auto;">
+            От скромного начала до величия мирового футбола
+        </p>
+    </div>
+</div>
+
+<!-- Добавьте новые анимации -->
+<style>
+    @keyframes rotateSlow {
+        from { transform: translate(-50%, -50%) rotate(0deg); }
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    
+    .timeline-item {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png');
+        background-size: contain;
+        opacity: 0.1;
+        pointer-events: none;
+    }
+</style>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Путь <span>Легенды</span></h2>
+            
+            <div class="era-card">
+                <div class="era-title">
+                    <i class="fas fa-calendar-alt"></i> Основание клуба
+                    <span class="era-year">1899</span>
+                </div>
+                <p>29 ноября 1899 года швейцарец Жоан Гампер основал футбольный клуб "Барселона" вместе с группой швейцарских, британских и испанских футболистов. Первым президентом стал Уолтер Уайлд. Клуб быстро стал символом каталонской идентичности.</p>
+                <div class="milestone">
+                    <span class="milestone-year">1899</span>
+                    <span>Первый матч против команды британских моряков (0:1)</span>
+                </div>
+            </div>
+
+            <div class="era-card">
+                <div class="era-title">
+                    <i class="fas fa-trophy"></i> Первые трофеи
+                    <span class="era-year">1910-1920</span>
+                </div>
+                <p>"Барселона" выигрывает свои первые трофеи, включая Кубок Испании (1910) и несколько региональных чемпионатов. Строится первый стадион "Лес Кортс".</p>
+                <div class="milestone">
+                    <span class="milestone-year">1910</span>
+                    <span>Первый Кубок Испании</span>
+                </div>
+                <div class="milestone">
+                    <span class="milestone-year">1922</span>
+                    <span>Открытие стадиона "Лес Кортс" на 30 000 зрителей</span>
+                </div>
+            </div>
+
+            <div class="era-card">
+                <div class="era-title">
+                    <i class="fas fa-star"></i> Эпоха Кубала
+                    <span class="era-year">1950-1961</span>
+                </div>
+                <p>Венгерская легенда Ласло Кубала становится первой суперзвездой клуба. С его приходом "Барселона" выигрывает множество трофеев и строит новый стадион "Камп Ноу".</p>
+                <div class="milestone">
+                    <span class="milestone-year">1951</span>
+                    <span>Кубала дебютирует и забивает 4 гола в первом матче</span>
+                </div>
+                <div class="milestone">
+                    <span class="milestone-year">1957</span>
+                    <span>Открытие "Камп Ноу" - нового дома "Барселоны"</span>
+                </div>
+            </div>
+
+            <div class="era-card">
+                <div class="era-title">
+                    <i class="fas fa-crown"></i> Эпоха Кройфа
+                    <span class="era-year">1973-1978 (игрок) / 1988-1996 (тренер)</span>
+                </div>
+                <p>Йохан Кройф меняет всё. Сначала как игрок, выигравший чемпионат в 1974 году, а затем как тренер, создавший легендарную "Dream Team".</p>
+                <div class="milestone">
+                    <span class="milestone-year">1974</span>
+                    <span>Разгром "Реала" на "Сантьяго Бернабеу" 5:0</span>
+                </div>
+                <div class="milestone">
+                    <span class="milestone-year">1992</span>
+                    <span>Первый Кубок Европейских чемпионов на "Уэмбли"</span>
+                </div>
+            </div>
+
+            <div class="era-card">
+                <div class="era-title">
+                    <i class="fas fa-magic"></i> Золотая эра
+                    <span class="era-year">2004-2012</span>
+                </div>
+                <p>Эпоха Роналдиньо, Месси, Хави, Иньесты и Пуйоля. "Барселона" становится лучшей командой в истории футбола, выиграв всё возможное.</p>
+                <div class="milestone">
+                    <span class="milestone-year">2005</span>
+                    <span>Роналдиньо приносит второй Кубок чемпионов</span>
+                </div>
+                <div class="milestone">
+                    <span class="milestone-year">2009</span>
+                    <span>Исторический секстет (6 трофеев за год)</span>
+                </div>
+                <div class="milestone">
+                    <span class="milestone-year">2011</span>
+                    <span>Победа на "Уэмбли" - четвертый Кубок чемпионов</span>
+                </div>
+            </div>
+
+            <div class="era-card">
+                <div class="era-title">
+                    <i class="fas fa-heart"></i> Современность
+                    <span class="era-year">2015-н.в.</span>
+                </div>
+                <p>Пятый Кубок чемпионов с MSN (Месси, Суарес, Неймар), продолжение величия и новые вызовы.</p>
+                <div class="milestone">
+                    <span class="milestone-year">2015</span>
+                    <span>Пятая Лига Чемпионов в Берлине</span>
+                </div>
+                <div class="milestone">
+                    <span class="milestone-year">2021</span>
+                    <span>Уход Месси, но клуб продолжает бороться</span>
+                </div>
+                <div class="milestone">
+                    <span class="milestone-year">2023</span>
+                    <span>Новая Ла Лига с молодыми звездами</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Статистика -->
+    <section class="section" style="background: linear-gradient(135deg, var(--barca-blue), var(--barca-red)); color: white;">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Цифры и <span style="color: var(--barca-gold);">Факты</span></h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                <div>
+                    <i class="fas fa-calendar" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 3rem; font-weight: 800;">1899</h3>
+                    <p>Год основания</p>
+                </div>
+                <div>
+                    <i class="fas fa-trophy" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 3rem; font-weight: 800;">100+</h3>
+                    <p>Официальных трофеев</p>
+                </div>
+                <div>
+                    <i class="fas fa-users" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 3rem; font-weight: 800;">300M+</h3>
+                    <p>Болельщиков в мире</p>
+                </div>
+                <div>
+                    <i class="fas fa-futbol" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 3rem; font-weight: 800;">4000+</h3>
+                    <p>Игроков в истории</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona" style="height: 80px;">
+            <p>FC Barcelona - Historia de un sueño</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2024 Все права защищены</p>
+        </div>
+    </footer>
+</body>
+</html>
